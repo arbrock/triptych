@@ -62,16 +62,22 @@ while(scalar @w_names_l > 0) {
   }
   # mileage, forward and reverse
   $c_miles += $w_miles[0];
-  my $reverse = $r_miles[0] - $c_miles;
-  # print
-  print "$c_miles\t$pretty_name\t$reverse\n";
-  # reset data structures
+  # advance data structures to next waypoint
   shift @w_names_l;
   shift @w_names_r;
   shift @w_miles;
-  if($reverse == 0) {
-    print "==============================\n";
-    $c_miles = 0;
-    shift @r_miles;
+  # print the waypoint, possibly twice if it is a reset point
+  did_reset: for(my $reset_count = 0; $reset_count < 2; $reset_count++) {
+    my $reverse = $r_miles[0] - $c_miles;
+    # print
+    print "$c_miles\t$pretty_name\t$reverse\n";
+    # reset data structures
+    if($reverse <= 0 && (scalar @w_names_l) > 0) {
+      print "==============================\n";
+      $c_miles = 0;
+      shift @r_miles;
+    } else {
+      last did_reset;
+    }
   }
 }
