@@ -1,0 +1,21 @@
+0 Red Ball Garage
+# round 1.8 to 2
+2 Lincoln Tunnel
+# round 5.5 to 5
+5 NJ-495:NJ-3
+19 NJ-3:I-80
+73 NJ:PA
+384 PA:OH
+620 OH:IN
+772 IN:IL
+802 Joliet
+RESET
+133 IL:IA
+438 IA:NE
+790 I-80:I-76
+793 NE:CO
+977 I-76:I-70
+1050 Copper Mountain
+RESET
+197 CO-UT
+# ... and so on

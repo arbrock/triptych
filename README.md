@@ -3,4 +3,4 @@ This is a script to generate reverse mileages to waypoints for road trips. I ten
 
 This script supports comments in the input file, prefixed with `#`, and a keyword `RESET`, which inserts a horizontal bar and resets the cumulative mileage. I use this to resynchronize the mileage at e.g. a planned overnight stop. Otherwise, the format is `N L:R` where `N` is an integer mileage, `L` is the road you're turning off of on the outbound leg, and `R` is the road you're turning onto on the outbound leg.
 
-A proper example is forthcoming.
+(/examples/cannonball.txt) has a portion of the Cannonball Run documented in the proper format.
